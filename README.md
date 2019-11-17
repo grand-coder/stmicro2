@@ -1,3 +1,17 @@
+# Import
+
+## 結構
+
+Python的結構是一個公司的結構，資料夾是部門，__init__.py是老闆，其他是員工
+
+## import
+
+import後面必須接一個.py，寫到資料夾名稱其實是指__init__.py
+
+## from ... import
+
+from ... import 是先走到一個基準點再開始import，import後面可以接到py裡的某個名字
+
 # 物件導向
 
 ## 函式定義
@@ -37,6 +51,7 @@ print(add(2, 1, 3, 4)
 ### **kwargs
 
 打兩個 ** 會把所有帶入的參數組合成一個字典
+
 
 ```python
 def add(n1, n2, **kwargs):
@@ -115,4 +130,19 @@ test()("hello")
 # 創造物件
 p1 = Person("Elwing", 175, 75)
 print(p1.getbmi())
+```
+
+## 繼承
+
+```python
+
+class SuperPerson(Person):
+    def __init__(self, name, height, weight, city):
+        Person.__init__(self, name, height, weight, city)
+        self.city = city
+        
+    def __str__(self):
+        return "name:{}\theight:{}\tweight:{}\tcity".format(self.name, self.height, self.weight, self.city)
+
+SuperPerson("Elwing, 175, 75, "Taipei")
 ```
