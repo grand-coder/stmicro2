@@ -81,4 +81,38 @@ def test():
 test()("hello")
 ```
 
+ ## 物件導向
  
+ 物件導向讓你可以定義出自己想要的資料樣貌，並且大量的創造
+ 
+ ### 基本定義
+ 
+ ```python
+ class Person:
+ 
+    # 物件導向最重要的函式, 初始化所有的資料
+    def __init__(self, name, height, weight):
+        # 你的物件擁有的屬性
+        self.name = name
+        self.height = height
+        self.weight = weight
+        
+    # 接下來你可以定義你自己想要的函式
+    def getbmi(self):
+        return self.weight / (self.height / 100) ** 2
+        
+    # 以__開頭和結尾的是python特殊的函式
+    # 你可以藉由覆蓋他來得到自己想要的行為
+    # __str__是我們平常使用str()和print()所得到的東西
+    def __str__(self):
+        return "name:{}\theight:{}\tweight:{}".format(self.name, self.height, self.weight)
+        
+    # __repr__是如果你在群集裡被打印的時候所使用的函式
+    def __repr__(self):
+        return  self.__str__()
+    
+    
+# 創造物件
+p1 = Person("Elwing", 175, 75)
+print(p1.getbmi())
+```
