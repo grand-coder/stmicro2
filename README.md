@@ -47,9 +47,37 @@ def add(n1, n2, **kwargs):
     result = result / kwargs["div"]
   return result
   
-print(add(3, 4, 5, mul=2, div=3)
+print(add(3, 4, mul=2, div=3)
 ```
 
+### 組合 *args 和 *kwargs
 
+```python
+def add(*args, **kwargs):
+  pass
+
+print(add(3, 4, 5, 6, mul=2, div=3)
+
+### 函式也為物件
+
+python 的函式就跟整數，字串一樣，你可以想像成  
+
+> 函式名字  =  一份SOP(由程式組成)
+
+> 加入 () 代表對這個SOP做一個執行的動作
+
+```python
+# 例子1. 將print背後的東西給個新名字, 再()執行
+b = print
+b("hello)
+```
+
+```
+# 例子2. 將函式當成一個如同整數的東西回傳
+def test():
+  return print
+  
+test()("hello")
+```
 
  
